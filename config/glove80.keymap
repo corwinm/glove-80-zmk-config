@@ -493,9 +493,9 @@
         Base-HRM {
             bindings = <
 &kp F1      &kp F2           &kp F3            &kp F4           &kp F5                                                                                                           &kp F6            &kp F7           &kp F8            &kp F9              &kp F10
-&kp GRAVE   &kp N1           &kp N2            &kp N3           &kp N4            &kp N5                                                                                 &kp N6  &kp N7            &kp N8           &kp N9            &kp N0              &kp MINUS
-&kp TAB     &kp Q            &kp W             &kp E            &kp R             &kp T                                                                                  &kp Y   &kp U             &kp I            &kp O             &kp P               &kp BSLH
-&kp ESC     &mt_slow LALT A  &mt_slow LCTRL S  &mt_slow LGUI D  &mt_slow LSHFT F  &kp G                                                                                  &kp H   &mt_slow RSHFT J  &mt_slow RGUI K  &mt_slow RCTRL L  &mt_slow RALT SEMI  &kp SQT
+&kp ESC     &kp N1           &kp N2            &kp N3           &kp N4            &kp N5                                                                                 &kp N6  &kp N7            &kp N8           &kp N9            &kp N0              &kp MINUS
+&kp GRAVE   &kp Q            &kp W             &kp E            &kp R             &kp T                                                                                  &kp Y   &kp U             &kp I            &kp O             &kp P               &kp BSLH
+&kp TAB     &mt_slow LALT A  &mt_slow LCTRL S  &mt_slow LGUI D  &mt_slow LSHFT F  &kp G                                                                                  &kp H   &mt_slow RSHFT J  &mt_slow RGUI K  &mt_slow RCTRL L  &mt_slow RALT SEMI  &kp SQT
 &kp EQUAL   &kp Z            &kp X             &kp C            &kp V             &kp B   &mt LSHFT RET    &kp LGUI       &kp LALT  &kp RCTRL  &kp RGUI     &kp RSHFT    &kp N   &kp M             &kp COMMA        &kp DOT           &kp FSLH            &kp PG_UP
 &magic 5 0  &kp HOME         &kp END           &kp LEFT         &kp RIGHT                 &lt 4 BACKSPACE  &mt LCTRL ESC  &mo 5     &mo 3      &lt 1 ENTER  &lt 2 SPACE          &kp DOWN          &kp UP           &kp LBKT          &kp RBKT            &kp PG_DN
             >;
@@ -503,12 +503,12 @@
 
         Symbol {
             bindings = <
-&trans  &trans         &trans      &trans      &trans                                                                                             &trans  &trans  &trans  &trans  &trans
-&trans  &trans         &trans      &trans      &trans      &trans                                                                         &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp LS(LBKT)   &kp LS(N7)  &kp LS(N8)  &kp LS(N9)  &kp LS(RBKT)                                                                   &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp LS(SEMI)   &kp LS(N4)  &kp LS(N5)  &kp LS(N6)  &kp LS(EQUAL)                                                                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp LS(MINUS)  &kp LS(N1)  &kp LS(N2)  &kp LS(N3)  &kp LS(BSLH)   &trans      &trans       &trans         &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans         &trans      &trans      &trans                     &kp RS(N9)  &kp LS(DOT)  &kp LS(MINUS)  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
+&trans  &trans         &trans      &trans      &trans                                                                                            &trans  &trans  &trans  &trans  &trans
+&trans  &trans         &trans      &trans      &trans      &trans                                                                        &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp LS(LBKT)   &kp LS(N7)  &kp LS(N8)  &kp LS(N9)  &kp LS(RBKT)                                                                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp LS(SEMI)   &kp LS(N4)  &kp LS(N5)  &kp LS(N6)  &kp LS(EQUAL)                                                                 &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp LS(MINUS)  &kp LS(N1)  &kp LS(N2)  &kp LS(N3)  &kp LS(BSLH)   &trans      &trans      &trans         &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans         &trans      &trans      &trans                     &kp RS(N9)  &kp LS(N0)  &kp LS(MINUS)  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
             >;
         };
 
