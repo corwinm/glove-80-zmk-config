@@ -48,34 +48,6 @@
         bindings = <&mo layer>, <&to layer>; \
 )
 
-/* Automatically generated layer name #define */
-
-#define LAYER_BaseHRM 0
-#define LAYER_Base 1
-#define LAYER_Lower 2
-#define LAYER_Upper 3
-#define LAYER_Magic 4
-
-/* To deal with the situation where there is no Lower layer, to keep &lower happy */
-
-#ifndef LAYER_Lower
-
-#define LAYER_Lower 0
-
-#
-
-endif {
-    /* Custom Device-tree */
-    /* Input Listeners */
-    /* System behavior and Macros */
-
-    /
-
-    behaviors {
-        ZMK_TD_LAYER(lower, LAYER_Lower)
-    };
-};
-
 / {
     macros {
         rgb_ug_status_macro: rgb_ug_status_macro {
