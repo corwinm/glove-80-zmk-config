@@ -15,6 +15,7 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/pointing.h>
 #include <dt-bindings/zmk/rgb.h>
 
 /* On demand includes */
@@ -492,23 +493,23 @@
 
         Base-HRM {
             bindings = <
-&kp F1      &kp F2           &kp F3            &kp F4           &kp F5                                                                                                           &kp F6            &kp F7           &kp F8            &kp F9              &kp F10
-&kp ESC     &kp N1           &kp N2            &kp N3           &kp N4            &kp N5                                                                                 &kp N6  &kp N7            &kp N8           &kp N9            &kp N0              &kp MINUS
-&kp GRAVE   &kp Q            &kp W             &kp E            &kp R             &kp T                                                                                  &kp Y   &kp U             &kp I            &kp O             &kp P               &kp BSLH
-&kp TAB     &mt_slow LALT A  &mt_slow LCTRL S  &mt_slow LGUI D  &mt_slow LSHFT F  &kp G                                                                                  &kp H   &mt_slow RSHFT J  &mt_slow RGUI K  &mt_slow RCTRL L  &mt_slow RALT SEMI  &kp SQT
-&kp EQUAL   &kp Z            &kp X             &kp C            &kp V             &kp B   &mt LSHFT RET    &kp LGUI       &kp LALT  &kp RCTRL  &kp RGUI     &kp RSHFT    &kp N   &kp M             &kp COMMA        &kp DOT           &kp FSLH            &kp PG_UP
-&magic 5 0  &kp HOME         &kp END           &kp LEFT         &kp RIGHT                 &lt 4 BACKSPACE  &mt LCTRL ESC  &mo 5     &mo 3      &lt 1 ENTER  &lt 2 SPACE          &kp DOWN          &kp UP           &kp LBKT          &kp RBKT            &kp PG_DN
+&kp F1      &kp F2           &kp F3            &kp F4           &kp F5                                                                                                              &kp F6            &kp F7           &kp F8            &kp F9              &kp F10
+&kp ESC     &kp N1           &kp N2            &kp N3           &kp N4            &kp N5                                                                                    &kp N6  &kp N7            &kp N8           &kp N9            &kp N0              &kp MINUS
+&kp GRAVE   &kp Q            &kp W             &kp E            &kp R             &kp T                                                                                     &kp Y   &kp U             &kp I            &kp O             &kp P               &kp BSLH
+&kp TAB     &mt_slow LALT A  &mt_slow LCTRL S  &mt_slow LGUI D  &mt_slow LSHFT F  &kp G                                                                                     &kp H   &mt_slow RSHFT J  &mt_slow RGUI K  &mt_slow RCTRL L  &mt_slow RALT SEMI  &kp SQT
+&kp EQUAL   &kp Z            &kp X             &kp C            &kp V             &kp B   &mt LSHFT RET    &kp LGUI       &kp LALT     &kp RCTRL  &kp RGUI     &kp RSHFT    &kp N   &kp M             &kp COMMA        &kp DOT           &kp FSLH            &kp PG_UP
+&magic 6 0  &kp HOME         &kp END           &kp LEFT         &kp RIGHT                 &lt 4 BACKSPACE  &mt LCTRL ESC  &lt 5 GRAVE  &lt 3 TAB  &lt 1 ENTER  &lt 2 SPACE          &kp DOWN          &kp UP           &kp LBKT          &kp RBKT            &kp PG_DN
             >;
         };
 
         Symbol {
             bindings = <
-&trans  &trans         &trans      &trans      &trans                                                                                            &trans  &trans  &trans  &trans  &trans
-&trans  &trans         &trans      &trans      &trans      &trans                                                                        &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp LS(LBKT)   &kp LS(N7)  &kp LS(N8)  &kp LS(N9)  &kp LS(RBKT)                                                                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp LS(SEMI)   &kp LS(N4)  &kp LS(N5)  &kp LS(N6)  &kp LS(EQUAL)                                                                 &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp LS(MINUS)  &kp LS(N1)  &kp LS(N2)  &kp LS(N3)  &kp LS(BSLH)   &trans      &trans      &trans         &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans         &trans      &trans      &trans                     &kp RS(N9)  &kp LS(N0)  &kp LS(MINUS)  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
+&trans  &trans        &trans      &trans      &trans                                                                                            &trans  &trans  &trans  &trans  &trans
+&trans  &trans        &trans      &trans      &trans      &trans                                                                        &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp LS(LBKT)  &kp LS(N7)  &kp LS(N8)  &kp LS(N9)  &kp LS(RBKT)                                                                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp LS(SEMI)  &kp LS(N4)  &kp LS(N5)  &kp LS(N6)  &kp LS(EQUAL)                                                                 &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp TILDE     &kp LS(N1)  &kp LS(N2)  &kp LS(N3)  &kp LS(BSLH)   &trans      &trans      &trans         &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans        &trans      &trans      &trans                     &kp RS(N9)  &kp LS(N0)  &kp LS(MINUS)  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
             >;
         };
 
@@ -536,12 +537,23 @@
 
         Nav-Tmux {
             bindings = <
-&trans  &trans      &trans          &trans         &trans                                                                                                 &trans     &trans     &trans      &trans  &trans
-&trans  &tmux_win1  &tmux_win2      &tmux_win3     &tmux_win4          &tmux_win5                                                          &trans         &trans     &trans     &trans      &trans  &trans
-&trans  &trans      &trans          &trans         &tmux_rename        &trans                                                              &kp LS(MINUS)  &kp LC(D)  &kp LC(U)  &kp LS(N4)  &trans  &trans
-&trans  &trans      &tmux_sessions  &tmux_detach   &tmux_prev_session  &tmux_next_session                                                  &kp LEFT       &kp DOWN   &kp UP     &kp RIGHT   &trans  &trans
-&trans  &trans      &trans          &tmux_new_tab  &trans              &trans              &trans  &trans  &trans  &trans  &trans  &trans  &kp HOME       &kp PG_DN  &kp PG_UP  &kp END     &trans  &trans
-&trans  &trans      &trans          &trans         &trans                                  &trans  &trans  &trans  &trans  &trans  &trans                 &trans     &trans     &trans      &trans  &trans
+&trans  &trans        &trans            &trans         &trans                                                                                     &trans     &trans     &trans      &trans  &trans
+&trans  &tmux_win1    &tmux_win2        &tmux_win3     &tmux_win4      &tmux_win5                                                  &trans         &trans     &trans     &trans      &trans  &trans
+&trans  &tmux_win1    &tmux_win2        &tmux_win3     &tmux_win4      &tmux_win5                                                  &kp LS(MINUS)  &kp LC(D)  &kp LC(U)  &kp LS(N4)  &trans  &trans
+&trans  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_META  &kp LEFT_SHIFT  &trans                                                      &kp LEFT       &kp DOWN   &kp UP     &kp RIGHT   &trans  &trans
+&trans  &trans        &trans            &tmux_new_tab  &trans          &trans      &trans  &trans  &trans  &trans  &trans  &trans  &kp HOME       &kp PG_DN  &kp PG_UP  &kp END     &trans  &trans
+&trans  &trans        &trans            &trans         &trans                      &trans  &trans  &trans  &trans  &trans  &trans                 &trans     &trans     &trans      &trans  &trans
+            >;
+        };
+
+        Mouse {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans                                                                                   &trans          &trans        &trans           &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                                                           &trans          &trans          &trans        &trans           &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                                                           &trans          &trans          &trans        &trans           &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                                                           &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans     &trans     &trans     &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &trans  &trans
+&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &mkp MCLK  &mkp RCLK  &mkp LCLK                  &trans          &trans        &trans           &trans  &trans
             >;
         };
 
@@ -552,18 +564,7 @@
 &none        &rgb_ug RGB_SPI  &rgb_ug RGB_SAI  &rgb_ug RGB_HUI  &rgb_ug RGB_BRI  &rgb_ug RGB_TOG                                                     &none  &none  &none  &none  &none  &none
 &bootloader  &rgb_ug RGB_SPD  &rgb_ug RGB_SAD  &rgb_ug RGB_HUD  &rgb_ug RGB_BRD  &rgb_ug RGB_EFF                                                     &none  &none  &none  &none  &none  &bootloader
 &sys_reset   &none            &none            &none            &none            &none            &bt_2  &bt_3  &none         &none  &none   &none   &none  &none  &none  &none  &none  &sys_reset
-&none        &none            &none            &none            &none                             &bt_0  &bt_1  &out OUT_USB  &none  &tog 6  &tog 0         &none  &none  &none  &none  &none
-            >;
-        };
-
-        layer_Base {
-            bindings = <
-&kp F1      &kp F2    &kp F3   &kp F4    &kp F5                                                                                             &kp F6    &kp F7     &kp F8    &kp F9    &kp F10
-&kp GRAVE   &kp N1    &kp N2   &kp N3    &kp N4     &kp N5                                                                          &kp N6  &kp N7    &kp N8     &kp N9    &kp N0    &kp MINUS
-&kp TAB     &kp Q     &kp W    &kp E     &kp R      &kp T                                                                           &kp Y   &kp U     &kp I      &kp O     &kp P     &kp BSLH
-&kp ESC     &kp A     &kp S    &kp D     &kp F      &kp G                                                                           &kp H   &kp J     &kp K      &kp L     &kp SEMI  &kp SQT
-&kp EQUAL   &kp Z     &kp X    &kp C     &kp V      &kp B   &mt LSHFT RET  &kp LGUI       &kp LALT  &kp RCTRL  &kp RGUI  &kp RSHFT  &kp N   &kp M     &kp COMMA  &kp DOT   &kp FSLH  &kp PG_UP
-&magic 5 0  &kp HOME  &kp END  &kp LEFT  &kp RIGHT          &kp BSPC       &mt LCTRL ESC  &mo 4     &mo 4      &kp RET   &kp SPACE          &kp DOWN  &kp UP     &kp LBKT  &kp RBKT  &kp PG_DN
+&none        &none            &none            &none            &none                             &bt_0  &bt_1  &out OUT_USB  &none  &tog 0  &tog 0         &none  &none  &none  &none  &none
             >;
         };
     };
