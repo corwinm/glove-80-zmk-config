@@ -267,32 +267,28 @@
 
 / {
     macros {
-        // ctl-a 1
+
+        tmux_prefix: tmux_prefix {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(A)>;
+            label = "TMUX_PREFIX";
+        };
 
         tmux_win1: tmux_win1 {
             label = "&TMUX_WIN1";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&tmux_prefix &kp N1>;
+            bindings = <&tmux_prefix>, <&kp N1>;
         };
 
-        // ctl-a 2
-
-        tmux_win2old: tmux_win2 {
-            label = "&TMUX_WIN2";
+        tmux_win2: tmux_win2 {
             compatible = "zmk,behavior-macro";
+            label = "TMUX_WIN2";
             #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LCTRL>,
-                <&macro_tap>,
-                <&kp A>,
-                <&macro_release>,
-                <&kp LCTRL>,
-                <&macro_wait_time 30>,
-                <&macro_tap>,
-                <&kp N2>;
+            bindings = <&tmux_prefix>, <&kp N2>;
         };
+
 
         // ctl-a 3
 
@@ -454,20 +450,6 @@
                 <&macro_wait_time 30>,
                 <&macro_tap>,
                 <&kp LS(N0)>;
-        };
-
-        tmux_prefix: tmux_prefix {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LC(SPACE)>;
-            label = "TMUX_PREFIX";
-        };
-
-        tmux_win2: tmux_win2 {
-            compatible = "zmk,behavior-macro";
-            label = "TMUX_WIN2";
-            #binding-cells = <0>;
-            bindings = <&tmux_prefix &kp N2>;
         };
     };
 };
