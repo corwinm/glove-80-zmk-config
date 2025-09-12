@@ -269,187 +269,87 @@
     macros {
 
         tmux_prefix: tmux_prefix {
+            label = "TMUX_PREFIX";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LC(A)>;
-            label = "TMUX_PREFIX";
         };
 
         tmux_win1: tmux_win1 {
-            label = "&TMUX_WIN1";
+            label = "TMUX_WIN1";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&tmux_prefix>, <&kp N1>;
         };
 
         tmux_win2: tmux_win2 {
-            compatible = "zmk,behavior-macro";
             label = "TMUX_WIN2";
+            compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&tmux_prefix>, <&kp N2>;
         };
 
-
-        // ctl-a 3
-
         tmux_win3: tmux_win3 {
-            label = "&TMUX_WIN3";
+            label = "TMUX_WIN3";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LCTRL>,
-                <&macro_tap>,
-                <&kp A>,
-                <&macro_release>,
-                <&kp LCTRL>,
-                <&macro_wait_time 30>,
-                <&macro_tap>,
-                <&kp N3>;
+            bindings = <&tmux_prefix>, <&kp N3>;
         };
-
-        // ctl-a c
-
-        tmux_new_tab: tmux_new_tab {
-            label = "&TMUX_NEW_TAB";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LCTRL>,
-                <&macro_tap>,
-                <&kp A>,
-                <&macro_release>,
-                <&kp LCTRL>,
-                <&macro_wait_time 30>,
-                <&macro_tap>,
-                <&kp C>;
-        };
-
-        // ctl-a 4
 
         tmux_win4: tmux_win4 {
-            label = "&TMUX_WIN4";
+            label = "TMUX_WIN4";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LCTRL>,
-                <&macro_tap>,
-                <&kp A>,
-                <&macro_release>,
-                <&kp LCTRL>,
-                <&macro_wait_time 30>,
-                <&macro_tap>,
-                <&kp N4>;
+            bindings = <&tmux_prefix>, <&kp N4>;
         };
-
-        // ctl-a 5
 
         tmux_win5: tmux_win5 {
-            label = "&TMUX_WIN5";
+            label = "TMUX_WIN5";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LCTRL>,
-                <&macro_tap>,
-                <&kp A>,
-                <&macro_release>,
-                <&kp LCTRL>,
-                <&macro_wait_time 30>,
-                <&macro_tap>,
-                <&kp N5>;
+            bindings = <&tmux_prefix>, <&kp N5>;
         };
 
-        // ctl-a s
+        tmux_new_tab: tmux_new_tab {
+            label = "TMUX_NEW_TAB";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&tmux_prefix>, <&kp C>;
+        };
 
         tmux_sessions: tmux_sessions {
-            label = "&TMUX_SESSIONS";
+            label = "TMUX_SESSIONS";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LCTRL>,
-                <&macro_tap>,
-                <&kp A>,
-                <&macro_release>,
-                <&kp LCTRL>,
-                <&macro_wait_time 30>,
-                <&macro_tap>,
-                <&kp S>;
+            bindings = <&tmux_prefix>, <&kp S>;
         };
-
-        // ctl-a d
 
         tmux_detach: tmux_detach {
-            label = "&TMUX_DETACH";
+            label = "TMUX_DETACH";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LCTRL>,
-                <&macro_tap>,
-                <&kp A>,
-                <&macro_release>,
-                <&kp LCTRL>,
-                <&macro_wait_time 30>,
-                <&macro_tap>,
-                <&kp D>;
+            bindings = <&tmux_prefix>, <&kp D>;
         };
-
-        // ctl-a $
 
         tmux_rename: tmux_rename {
-            label = "&TMUX_RENAME";
+            label = "TMUX_RENAME";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LCTRL>,
-                <&macro_tap>,
-                <&kp A>,
-                <&macro_release>,
-                <&kp LCTRL>,
-                <&macro_wait_time 30>,
-                <&macro_tap>,
-                <&kp LS(N4)>;
+            bindings = <&tmux_prefix>, <&kp LS(N4)>;
         };
-
-        // ctl-a (
 
         tmux_prev_session: tmux_prev_session {
-            label = "&TMUX_PREV_SESSION";
+            label = "TMUX_PREV_SESSION";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LCTRL>,
-                <&macro_tap>,
-                <&kp A>,
-                <&macro_release>,
-                <&kp LCTRL>,
-                <&macro_wait_time 30>,
-                <&macro_tap>,
-                <&kp LS(N9)>;
+            bindings = <&tmux_prefix>, <&kp LS(N9)>;
         };
 
-        // ctl-a )
-
         tmux_next_session: tmux_next_session {
-            label = "&TMUX_NEXT_SESSION";
+            label = "TMUX_NEXT_SESSION";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LCTRL>,
-                <&macro_tap>,
-                <&kp A>,
-                <&macro_release>,
-                <&kp LCTRL>,
-                <&macro_wait_time 30>,
-                <&macro_tap>,
-                <&kp LS(N0)>;
+            bindings = <&tmux_prefix>, <&kp LS(N0)>;
         };
     };
 };
