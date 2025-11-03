@@ -267,7 +267,6 @@
 
 / {
     macros {
-
         tmux_prefix: tmux_prefix {
             label = "TMUX_PREFIX";
             compatible = "zmk,behavior-macro";
@@ -279,77 +278,77 @@
             label = "TMUX_WIN1";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&tmux_prefix>, <&kp N1>;
+            bindings = <&tmux_prefix &kp N1>;
         };
 
         tmux_win2: tmux_win2 {
             label = "TMUX_WIN2";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&tmux_prefix>, <&kp N2>;
+            bindings = <&tmux_prefix &kp N2>;
         };
 
         tmux_win3: tmux_win3 {
             label = "TMUX_WIN3";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&tmux_prefix>, <&kp N3>;
+            bindings = <&tmux_prefix &kp N3>;
         };
 
         tmux_win4: tmux_win4 {
             label = "TMUX_WIN4";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&tmux_prefix>, <&kp N4>;
+            bindings = <&tmux_prefix &kp N4>;
         };
 
         tmux_win5: tmux_win5 {
             label = "TMUX_WIN5";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&tmux_prefix>, <&kp N5>;
+            bindings = <&tmux_prefix &kp N5>;
         };
 
         tmux_new_tab: tmux_new_tab {
             label = "TMUX_NEW_TAB";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&tmux_prefix>, <&kp C>;
+            bindings = <&tmux_prefix &kp C>;
         };
 
         tmux_sessions: tmux_sessions {
             label = "TMUX_SESSIONS";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&tmux_prefix>, <&kp S>;
+            bindings = <&tmux_prefix &kp S>;
         };
 
         tmux_detach: tmux_detach {
             label = "TMUX_DETACH";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&tmux_prefix>, <&kp D>;
+            bindings = <&tmux_prefix &kp D>;
         };
 
         tmux_rename: tmux_rename {
             label = "TMUX_RENAME";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&tmux_prefix>, <&kp LS(N4)>;
+            bindings = <&tmux_prefix &kp LS(N4)>;
         };
 
         tmux_prev_session: tmux_prev_session {
             label = "TMUX_PREV_SESSION";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&tmux_prefix>, <&kp LS(N9)>;
+            bindings = <&tmux_prefix &kp LS(N9)>;
         };
 
         tmux_next_session: tmux_next_session {
             label = "TMUX_NEXT_SESSION";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&tmux_prefix>, <&kp LS(N0)>;
+            bindings = <&tmux_prefix &kp LS(N0)>;
         };
     };
 };
@@ -404,12 +403,12 @@
 
         Base-HRM {
             bindings = <
-&kp F1      &kp F2           &kp F3            &kp F4              &kp F5                                                                                                                                &kp F6               &kp F7              &kp F8            &kp F9              &kp F10
-&kp ESC     &kp N1           &kp N2            &kp N3              &kp N4               &kp N5                                                                                                   &kp N6  &kp N7               &kp N8              &kp N9            &kp N0              &kp MINUS
-&kp GRAVE   &kp Q            &kp W             &kp E               &kp R                &kp T                                                                                                    &kp Y   &kp U                &kp I               &kp O             &kp P               &kp BSLH
-&kp TAB     &mt_slow LALT A  &mt_slow LCTRL S  &mt_default LGUI D  &mt_default LSHFT F  &kp G                                                                                                    &kp H   &mt_default RSHFT J  &mt_default RGUI K  &mt_slow RCTRL L  &mt_slow RALT SEMI  &kp SQT
-&kp EQUAL   &kp Z            &kp X             &kp C               &kp V                &kp B   &mt LSHFT RET       &kp LGUI       &kp LALT        &kp RCTRL     &kp RGUI        &kp RSHFT       &kp N   &kp M                &kp COMMA           &kp DOT           &kp FSLH            &kp PG_UP
-&magic 6 0  &kp HOME         &kp END           &kp LEFT            &kp RIGHT                    &lt_qt 4 BACKSPACE  &mt LCTRL ESC  &lt_qt 5 GRAVE  &lt_qt 3 TAB  &lt_qt 2 ENTER  &lt_qt 1 SPACE          &kp DOWN             &kp UP              &kp LBKT          &kp RBKT            &kp PG_DN
+&kp F1      &kp F2           &kp F3            &kp F4              &kp F5                                                                                                                                                                                        &kp F6               &kp F7              &kp F8            &kp F9              &kp F10
+&kp ESC     &kp N1           &kp N2            &kp N3              &kp N4               &kp N5                                                                                                                               &kp N6                              &kp N7               &kp N8              &kp N9            &kp N0              &kp MINUS
+&kp GRAVE   &kp Q            &kp W             &kp E               &kp R                &kp T                                                                                                                                &kp Y                               &kp U                &kp I               &kp O             &kp P               &kp BSLH
+&kp TAB     &mt_slow LALT A  &mt_slow LCTRL S  &mt_default LGUI D  &mt_default LSHFT F  &mt_default RS(RA(RC(RG(LGUI)))) G                                                                                                   &mt_default RS(RA(RC(RG(RGUI)))) H  &mt_default RSHFT J  &mt_default RGUI K  &mt_slow RCTRL L  &mt_slow RALT SEMI  &kp SQT
+&kp EQUAL   &kp Z            &kp X             &kp C               &kp V                &kp B                               &mt LSHFT RET       &kp LGUI       &kp LALT        &kp RCTRL     &kp RGUI        &kp RSHFT       &kp N                               &kp M                &kp COMMA           &kp DOT           &kp FSLH            &kp PG_UP
+&magic 6 0  &kp HOME         &kp END           &kp LEFT            &kp RIGHT                                                &lt_qt 4 BACKSPACE  &mt LCTRL ESC  &lt_qt 5 GRAVE  &lt_qt 3 TAB  &lt_qt 2 ENTER  &lt_qt 1 SPACE                                      &kp DOWN             &kp UP              &kp LBKT          &kp RBKT            &kp PG_DN
             >;
         };
 
