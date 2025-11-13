@@ -5,8 +5,73 @@ parse_config:
   # ZMK-specific parsing options
   zmk_remove_keycode_prefix: []  # e.g., ["DE_"] for locale headers
   
+  # Raw binding mappings for mouse keys
+  raw_binding_map:
+    "&mmv MOVE_LEFT": "←●"
+    "&mmv MOVE_RIGHT": "→●"
+    "&mmv MOVE_UP": "↑●"
+    "&mmv MOVE_DOWN": "↓●"
+    "&msc SCRL_LEFT": "⇠"
+    "&msc SCRL_RIGHT": "⇢"
+    "&msc SCRL_UP": "⇡"
+    "&msc SCRL_DOWN": "⇣"
+    "&mkp LCLK": "L●"
+    "&mkp RCLK": "R●"
+    "&mkp MCLK": "M●"
+  
+  # Custom modifier function mappings
+  modifier_fn_map:
+    # Mac-style modifier symbols
+    left_ctrl: "⌃"
+    right_ctrl: "⌃"
+    left_shift: "⇧"
+    right_shift: "⇧"
+    left_alt: "⌥"
+    right_alt: "⌥"
+    left_gui: "⌘"
+    right_gui: "⌘"
+    
+    # Add custom Hyper key combination (matches your keymap's RS(RA(RC(RG(LGUI)))))
+    special_combinations:
+      left_ctrl+left_alt+left_gui+left_shift: "Hyper"
+      right_ctrl+right_alt+right_gui+right_shift+left_gui: "Hyper"
+      right_ctrl+right_alt+right_gui+right_shift+right_gui: "Hyper"
+  
   # Map keycodes to their symbols
   zmk_keycode_map:
+    # Hyper key - map the full modifier combo to just the Hyper symbol
+    "RS(RA(RC(RG(LGUI))))": "◆"
+    "RS(RA(RC(RG(RGUI))))": "◆"
+    
+    # Mac-style modifier keys
+    LSHFT: "⇧"
+    RSHFT: "⇧"
+    LCTRL: "⌃"
+    RCTRL: "⌃"
+    LALT: "⌥"
+    RALT: "⌥"
+    LGUI: "⌘"
+    RGUI: "⌘"
+    
+    # Mac-style special keys
+    TAB: "⇥"
+    ESC: "⎋"
+    BSPC: "⌫"
+    BACKSPACE: "⌫"
+    DEL: "⌦"
+    DELETE: "⌦"
+    RET: "↩"
+    ENTER: "↩"
+    SPACE: "␣"
+    SPC: "␣"
+    CAPS: "⇪"
+    
+    # Arrow keys
+    UP: "↑"
+    DOWN: "↓"
+    LEFT: "←"
+    RIGHT: "→"
+    
     # Unshifted symbols
     MINUS: "-"
     EQUAL: "="
@@ -52,10 +117,16 @@ draw_config:
   split_gap: 30  # gap between split keyboard halves
   
   # Font settings
-  legend_font_size: 12
-  glyph_tap_size: 14
+  legend_font_size: 14
+  glyph_tap_size: 16
   glyph_hold_size: 12
   glyph_shifted_size: 10
+  
+  # Custom CSS to make hold field symbols larger but keep layer names smaller
+  svg_extra_style: |
+    text.tap { font-size: 18px !important; }
+    text.hold { font-size: 16px !important; }
+    text.layer-activator { font-size: 10px !important; }
   
   # Colors (customize as needed)
   # key_side_pars:
