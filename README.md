@@ -42,28 +42,33 @@ This repository uses [keymap-drawer](https://github.com/caksoylar/keymap-drawer)
 
 ### Viewing the Keymap
 
-The generated keymap visualization is available at:
-- SVG: `keymap-drawer/glove80.svg`
-- YAML: `keymap-drawer/glove80.yaml`
+The keymap visualization can be viewed locally by running the draw script (see below), or downloaded from GitHub Actions artifacts:
+
+1. Go to the "Actions" tab in your repository
+2. Click on the "Draw ZMK keymaps" workflow
+3. Select a workflow run
+4. Download the "keymap-visualization" artifact which contains:
+   - `glove80.svg` - Visual representation of your keymap
+   - `glove80.yaml` - Parsed keymap in YAML format
 
 ### Generating Keymap Locally
 
-To regenerate the keymap visualization locally, you need [uv](https://docs.astral.sh/uv/) installed. Then run:
+To generate the keymap visualization locally, you need [uv](https://docs.astral.sh/uv/) installed. Then run:
 
 ```bash
 ./draw-keymap.sh
 ```
 
-This will parse the ZMK keymap and generate both the YAML representation and SVG visualization.
+This will parse the ZMK keymap and generate both the YAML representation and SVG visualization in the `keymap-drawer/` directory.
 
 ### Automated Generation
 
-The keymap visualization is automatically regenerated on every push that modifies:
+The keymap visualization is automatically generated on every push that modifies:
 - `config/*.keymap`
 - `config/*.dtsi`
 - `keymap_drawer.config.yaml`
 
-The GitHub Actions workflow will commit the updated files back to the repository.
+The GitHub Actions workflow will generate the files and upload them as build artifacts (they are not committed to the repository).
 
 ### Customization
 

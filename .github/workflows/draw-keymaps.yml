@@ -11,12 +11,34 @@ on:
 
 jobs:
   draw:
-    uses: caksoylar/keymap-drawer/.github/workflows/draw-zmk.yml@main
-    permissions:
-      contents: write  # allow workflow to commit to the repo
-    with:
-      keymap_patterns: "config/*.keymap"        # path to the keymaps to parse
-      config_path: "keymap_drawer.config.yaml"  # config file, ignored if not exists
-      output_folder: "keymap-drawer"            # path to save produced SVG and keymap YAML files
-      parse_args: ""  # map of extra args to pass to `keymap parse`
-      draw_args: ""   # map of extra args to pass to `keymap draw`
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+      
+      - name: Parse and draw keymap
+        run: |
+          mkdir -p keymap-drawer
+          
+          # Parse keymap
+          if [ -f "keymap_drawer.config.yaml" ]; then
+            uvx --from keymap-drawer keymap -c keymap_drawer.config.yaml parse -z config/glove80.keymap > keymap-drawer/glove80.yaml
+          else
+            uvx --from keymap-drawer keymap parse -z config/glove80.keymap > keymap-drawer/glove80.yaml
+          fi
+          
+          # Draw SVG
+          if [ -f "keymap_drawer.config.yaml" ]; then
+            uvx --from keymap-drawer keymap -c keymap_drawer.config.yaml draw keymap-drawer/glove80.yaml > keymap-drawer/glove80.svg
+          else
+            uvx --from keymap-drawer keymap draw keymap-drawer/glove80.yaml > keymap-drawer/glove80.svg
+          fi
+      
+      - name: Upload keymap artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: keymap-visualization
+          path: keymap-drawer/

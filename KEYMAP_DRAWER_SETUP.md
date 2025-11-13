@@ -11,8 +11,9 @@ This repository is now configured to use [keymap-drawer](https://github.com/caks
 
 2. **GitHub Actions Workflow (`.github/workflows/draw-keymaps.yml`)**: Automatically regenerates keymap on push
    - Triggers on changes to `config/*.keymap`, `config/*.dtsi`, or `keymap_drawer.config.yaml`
-   - Commits generated files back to repository
-   - Uses the official keymap-drawer reusable workflow
+   - Uploads generated files as build artifacts (not committed to repository)
+   - Uses `uv` to run keymap-drawer
+   - Download artifacts from the Actions tab → "Draw ZMK keymaps" workflow → workflow run → "keymap-visualization" artifact
 
 3. **Configuration File (`keymap_drawer.config.yaml`)**: Customize appearance and behavior
    - Font sizes, colors, spacing

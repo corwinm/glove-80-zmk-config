@@ -2,6 +2,5 @@
 *.uf2
 .DS_Store
 
-# keymap-drawer output (generated files can be tracked in git if desired)
-# Uncomment the line below if you want to exclude generated files:
-# keymap-drawer/
+# keymap-drawer output (generated files uploaded as artifacts, not committed)
+keymap-drawer/
