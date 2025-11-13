@@ -1,0 +1,32 @@
+# keymap-drawer configuration
+# See https://github.com/caksoylar/keymap-drawer/blob/main/CONFIGURATION.md for full documentation
+
+parse_config:
+  # ZMK-specific parsing options
+  zmk_remove_keycode_prefix: []  # e.g., ["DE_"] for locale headers
+  
+draw_config:
+  # Styling options
+  key_h: 60  # key height
+  key_w: 60  # key width
+  split_gap: 30  # gap between split keyboard halves
+  
+  # Font settings
+  legend_font_size: 12
+  glyph_tap_size: 14
+  glyph_hold_size: 12
+  glyph_shifted_size: 10
+  
+  # Colors (customize as needed)
+  # key_side_pars:
+  #   "left":
+  #     fill: "#f0f0f0"
+  #   "right":
+  #     fill: "#f0f0f0"
+  
+  # SVG glyphs - you can add custom glyphs here
+  # glyphs:
+  #   custom_icon: |
+  #     <svg viewBox="0 0 24 24">
+  #       <path d="..." />
+  #     </svg>
