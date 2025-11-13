@@ -35,3 +35,42 @@ To locate your firmware files and reflash your Glove80...
 6. Flash the firmware to Glove80 according to the user documentation on the official Glove80 Glove80 Support website (linked above)
 
 Your keyboard is now ready to use.
+
+## Keymap Visualization
+
+This repository uses [keymap-drawer](https://github.com/caksoylar/keymap-drawer) to generate visual representations of the keyboard layout.
+
+### Viewing the Keymap
+
+The keymap visualization can be viewed locally by running the draw script (see below), or downloaded from GitHub Actions artifacts:
+
+1. Go to the "Actions" tab in your repository
+2. Click on the "Draw ZMK keymaps" workflow
+3. Select a workflow run
+4. Download the "keymap-visualization" artifact which contains:
+   - `glove80.svg` - Visual representation of your keymap
+   - `glove80.yaml` - Parsed keymap in YAML format
+
+### Generating Keymap Locally
+
+To generate the keymap visualization locally, you need [uv](https://docs.astral.sh/uv/) installed. Then run:
+
+```bash
+./draw-keymap.sh
+```
+
+This will parse the ZMK keymap and generate both the YAML representation and SVG visualization in the `keymap-drawer/` directory.
+
+### Automated Generation
+
+The keymap visualization is automatically generated on every push that modifies:
+- `config/*.keymap`
+- `config/*.dtsi`
+- `keymap_drawer.config.yaml`
+
+The GitHub Actions workflow will generate the files and upload them as build artifacts (they are not committed to the repository).
+
+### Customization
+
+You can customize the appearance of the keymap by editing `keymap_drawer.config.yaml`. See the [keymap-drawer configuration documentation](https://github.com/caksoylar/keymap-drawer/blob/main/CONFIGURATION.md) for available options.
+

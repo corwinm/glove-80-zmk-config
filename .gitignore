@@ -1,2 +1,6 @@
 *~
 *.uf2
+.DS_Store
+
+# keymap-drawer output (generated files uploaded as artifacts, not committed)
+keymap-drawer/
