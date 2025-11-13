@@ -5,6 +5,46 @@ parse_config:
   # ZMK-specific parsing options
   zmk_remove_keycode_prefix: []  # e.g., ["DE_"] for locale headers
   
+  # Map keycodes to their symbols
+  zmk_keycode_map:
+    # Unshifted symbols
+    MINUS: "-"
+    EQUAL: "="
+    LBKT: "["
+    RBKT: "]"
+    BSLH: "\\"
+    SEMI: ";"
+    SQT: "'"
+    GRAVE: "`"
+    COMMA: ","
+    DOT: "."
+    FSLH: "/"
+    TILDE: "~"
+    
+    # Shifted symbols
+    LS(N1): "!"
+    LS(N2): "@"
+    LS(N3): "#"
+    LS(N4): "$"
+    LS(N5): "%"
+    LS(N6): "^"
+    LS(N7): "&"
+    LS(N8): "*"
+    LS(N9): "("
+    LS(N0): ")"
+    RS(N9): "("
+    LS(MINUS): "_"
+    LS(EQUAL): "+"
+    LS(LBKT): "{"
+    LS(RBKT): "}"
+    LS(BSLH): "|"
+    LS(SEMI): ":"
+    LS(SQT): "\""
+    LS(GRAVE): "~"
+    LS(COMMA): "<"
+    LS(DOT): ">"
+    LS(FSLH): "?"
+  
 draw_config:
   # Styling options
   key_h: 60  # key height
