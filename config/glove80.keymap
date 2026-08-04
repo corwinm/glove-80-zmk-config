@@ -451,7 +451,7 @@
 &trans  &tmux_win1    &tmux_win2        &tmux_win3     &tmux_win4      &tmux_win5                                                  &trans         &trans     &trans     &trans      &trans  &trans
 &trans  &tmux_win1    &tmux_win2        &tmux_win3     &tmux_win4      &tmux_win5                                                  &kp LS(MINUS)  &kp LC(D)  &kp LC(U)  &kp LS(N4)  &trans  &trans
 &trans  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_META  &kp LEFT_SHIFT  &trans                                                      &kp LEFT       &kp DOWN   &kp UP     &kp RIGHT   &trans  &trans
-&trans  &trans        &trans            &tmux_new_tab  &trans          &trans      &trans  &trans  &trans  &trans  &trans  &trans  &kp HOME       &kp PG_DN  &kp PG_UP  &kp END     &trans  &trans
+&trans  &trans        &trans            &tmux_new_tab  &kp INSERT      &trans      &trans  &trans  &trans  &trans  &trans  &trans  &kp HOME       &kp PG_DN  &kp PG_UP  &kp END     &trans  &trans
 &trans  &trans        &trans            &trans         &trans                      &trans  &trans  &trans  &trans  &trans  &trans                 &trans     &trans     &trans      &trans  &trans
             >;
         };
