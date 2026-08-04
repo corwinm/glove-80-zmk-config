@@ -8,37 +8,49 @@ on:
       - "config/*.keymap"
       - "config/*.dtsi"
       - "keymap_drawer.config.yaml"
+      - ".github/workflows/draw-keymaps.yml"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: draw-keymaps-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   draw:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
-      
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
       - name: Install uv
-        uses: astral-sh/setup-uv@v5
-      
+        uses: astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9 # v9.0.0
+        with:
+          version: "0.12.1"
+          enable-cache: false
+
       - name: Parse and draw keymap
         run: |
           mkdir -p keymap-drawer
           
           # Parse keymap
           if [ -f "keymap_drawer.config.yaml" ]; then
-            uvx --from keymap-drawer keymap -c keymap_drawer.config.yaml parse -z config/glove80.keymap > keymap-drawer/glove80.yaml
+            uvx --from 'keymap-drawer==0.23.0' keymap -c keymap_drawer.config.yaml parse -z config/glove80.keymap > keymap-drawer/glove80.yaml
           else
-            uvx --from keymap-drawer keymap parse -z config/glove80.keymap > keymap-drawer/glove80.yaml
+            uvx --from 'keymap-drawer==0.23.0' keymap parse -z config/glove80.keymap > keymap-drawer/glove80.yaml
           fi
           
           # Draw SVG
           if [ -f "keymap_drawer.config.yaml" ]; then
-            uvx --from keymap-drawer keymap -c keymap_drawer.config.yaml draw keymap-drawer/glove80.yaml > keymap-drawer/glove80.svg
+            uvx --from 'keymap-drawer==0.23.0' keymap -c keymap_drawer.config.yaml draw keymap-drawer/glove80.yaml > keymap-drawer/glove80.svg
           else
-            uvx --from keymap-drawer keymap draw keymap-drawer/glove80.yaml > keymap-drawer/glove80.svg
+            uvx --from 'keymap-drawer==0.23.0' keymap draw keymap-drawer/glove80.yaml > keymap-drawer/glove80.svg
           fi
       
       - name: Upload keymap artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           name: keymap-visualization
           path: keymap-drawer/
+          retention-days: 30

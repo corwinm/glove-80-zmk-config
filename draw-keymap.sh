@@ -15,17 +15,17 @@ mkdir -p "$OUTPUT_DIR"
 # Parse the keymap
 echo "Parsing keymap from $KEYMAP_FILE..."
 if [ -f "$CONFIG_FILE" ]; then
-    uvx --from keymap-drawer keymap -c "$CONFIG_FILE" parse -z "$KEYMAP_FILE" > "$OUTPUT_YAML"
+    uvx --from 'keymap-drawer==0.23.0' keymap -c "$CONFIG_FILE" parse -z "$KEYMAP_FILE" > "$OUTPUT_YAML"
 else
-    uvx --from keymap-drawer keymap parse -z "$KEYMAP_FILE" > "$OUTPUT_YAML"
+    uvx --from 'keymap-drawer==0.23.0' keymap parse -z "$KEYMAP_FILE" > "$OUTPUT_YAML"
 fi
 
 # Draw the SVG
 echo "Drawing SVG to $OUTPUT_SVG..."
 if [ -f "$CONFIG_FILE" ]; then
-    uvx --from keymap-drawer keymap -c "$CONFIG_FILE" draw "$OUTPUT_YAML" > "$OUTPUT_SVG"
+    uvx --from 'keymap-drawer==0.23.0' keymap -c "$CONFIG_FILE" draw "$OUTPUT_YAML" > "$OUTPUT_SVG"
 else
-    uvx --from keymap-drawer keymap draw "$OUTPUT_YAML" > "$OUTPUT_SVG"
+    uvx --from 'keymap-drawer==0.23.0' keymap draw "$OUTPUT_YAML" > "$OUTPUT_SVG"
 fi
 
 echo "Done! Keymap saved to:"
